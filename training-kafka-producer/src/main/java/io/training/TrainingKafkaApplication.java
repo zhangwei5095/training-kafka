@@ -12,6 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrainingKafkaApplication {
 
     public static void main(String[] args) {
+        final boolean isAsync = args.length > 0 ? !args[0].trim().toLowerCase().equals("sync") : true;
+        Producer producerThread = new Producer(KafkaProperties.topic, isAsync);
+        producerThread.start();
         SpringApplication.run(TrainingKafkaApplication.class, args);
     }
 }
