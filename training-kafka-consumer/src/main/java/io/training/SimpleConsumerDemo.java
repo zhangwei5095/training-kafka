@@ -44,20 +44,20 @@ public class SimpleConsumerDemo {
         }
     }
 
-    private static void generateData() {
-        Producer producer2 = new Producer(KafkaProperties.topic2, false);
-        producer2.start();
-        Producer producer3 = new Producer(KafkaProperties.topic3, false);
-        producer3.start();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    private static void generateData() {
+//        Producer producer2 = new Producer(KafkaProperties.topic2, false);
+//        producer2.start();
+//        Producer producer3 = new Producer(KafkaProperties.topic3, false);
+//        producer3.start();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void main(String[] args) throws Exception {
-        generateData();
+        //generateData();
 
         SimpleConsumer simpleConsumer = new SimpleConsumer(KafkaProperties.kafkaServerURL,
                 KafkaProperties.kafkaServerPort,
