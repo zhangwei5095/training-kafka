@@ -12,6 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrainingKafkaApplication {
 
     public static void main(String[] args) {
+
+        Consumer consumer = new Consumer("test");
+        consumer.doWork();
         SpringApplication.run(TrainingKafkaApplication.class, args);
     }
 }

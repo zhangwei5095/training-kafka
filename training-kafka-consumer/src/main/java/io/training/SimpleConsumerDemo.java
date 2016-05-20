@@ -68,19 +68,17 @@ public class SimpleConsumerDemo {
         System.out.println("Testing single fetch");
         FetchRequest req = new FetchRequestBuilder()
                 .clientId(KafkaProperties.clientId)
-                .addFetch(KafkaProperties.topic2, 0, 0L, 100)
+                .addFetch(KafkaProperties.topic, 0, 0L, 100)
                 .build();
         FetchResponse fetchResponse = simpleConsumer.fetch(req);
-        printMessages(fetchResponse.messageSet(KafkaProperties.topic2, 0));
+        printMessages(fetchResponse.messageSet(KafkaProperties.topic, 0));
 
         System.out.println("Testing single multi-fetch");
         Map<String, List<Integer>> topicMap = new HashMap<String, List<Integer>>();
-        topicMap.put(KafkaProperties.topic2, Collections.singletonList(0));
-        topicMap.put(KafkaProperties.topic3, Collections.singletonList(0));
+        topicMap.put(KafkaProperties.topic, Collections.singletonList(0));
         req = new FetchRequestBuilder()
                 .clientId(KafkaProperties.clientId)
-                .addFetch(KafkaProperties.topic2, 0, 0L, 100)
-                .addFetch(KafkaProperties.topic3, 0, 0L, 100)
+                .addFetch(KafkaProperties.topic, 0, 0L, 100)
                 .build();
         fetchResponse = simpleConsumer.fetch(req);
         int fetchReq = 0;

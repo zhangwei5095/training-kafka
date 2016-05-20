@@ -97,7 +97,7 @@ class DemoCallBack implements Callback {
         long elapsedTime = System.currentTimeMillis() - startTime;
         if (metadata != null) {
             System.out.println(
-                    "message(" + key + ", " + message + ") sent to partition(" + metadata.partition() +
+                    "============================message(" + key + ", " + message + ") sent to partition(" + metadata.partition() +
                             "), " +
                             "offset(" + metadata.offset() + ") in " + elapsedTime + " ms");
         } else {
